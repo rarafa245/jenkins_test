@@ -4,13 +4,13 @@ pipeline {
         USER= "rafael"
     }
     stages {
-        stage('Clone Repo') { 
+        stage('Set Enviroment') { 
             steps {
                 sh "virtualenv -p python3 venv && . venv/bin/activate"
                 sh "pip3 install -r requirements.txt"
             }
         }
-        stage('Test') { 
+        stage('Test Project') { 
             steps {
                 sh ". venv/bin/activate"
                 sh "python3 -m pytest -s -v"
