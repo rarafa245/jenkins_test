@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Deploy') {
             when {
-                env.BRANCH == 'master'
+                branch 'master'
             }
             steps {
                 sh "cd /home/${env.USER} && sudo mkdir -p projectJenkins"
