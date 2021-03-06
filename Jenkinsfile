@@ -24,7 +24,7 @@ pipeline {
                 sh "cd /home/${env.USER} && sudo mkdir -p projectJenkins"
                 sh "sudo cp -r * /home/${env.USER}/projectJenkins"
                 sh "sudo rm -r *"
-                sh "cd /home/${env.USER}/projectJenkins && . venv/bin/activate && sudo python3 start.py"
+                sh "cd /home/${env.USER}/projectJenkins && . venv/bin/activate && sudo python3 start.py &"
             }
         }
     }
