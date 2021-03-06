@@ -1,7 +1,6 @@
 pipeline {
     agent any 
     environment {
-        GIT_REPO = "https://github.com/rarafa245/jenkins_test"
         USER= "rafael"
     }
     stages {
