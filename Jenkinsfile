@@ -18,8 +18,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh "cd /home/${env.USER} && sudo mkdir projectJenkins"
-                sh "sudo mv * /home/${env.USER}/projectJenkins"
+                sh "cd /home/${env.USER} && sudo mkdir -p projectJenkins"
+                sh "sudo cp -r * /home/${env.USER}/projectJenkins"
+                sh "sudo rm -r *"
                 sh "cd /home/${env.USER}/projectJenkins && . venv/bin/activate && sudo python3 start.py"
             }
         }
