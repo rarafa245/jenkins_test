@@ -17,6 +17,9 @@ pipeline {
             }
         }
         stage('Deploy') {
+            when {
+                env.BRANCH == 'master'
+            }
             steps {
                 sh "cd /home/${env.USER} && sudo mkdir -p projectJenkins"
                 sh "sudo cp -r * /home/${env.USER}/projectJenkins"
